@@ -102,6 +102,20 @@ def get_signal_files(record):
         signal_files = list()
     return signal_files
 
+def get_signal_files_from_header(string):
+    signal_files = list()
+    for i, l in enumerate(string.split('\n')):
+        arrs = [arr.strip() for arr in l.split(' ')]
+        if i==0 and not l.startswith('#'):
+            num_channels = int(arrs[1])
+        elif i<=num_channels and not l.startswith('#'):
+            signal_file = arrs[0]
+            if signal_file not in signal_files:
+                signal_files.append(signal_file)
+        else:
+            break
+    return signal_files
+
 # Get the patient ID from a header or a similar string.
 def get_patient_id(string):
     patient_id, has_patient_id = get_variable(string, patient_id_string)
@@ -143,7 +157,7 @@ def get_label(string, allow_missing=False):
 # Get the probability from a header or a similar string.
 def get_probability(string, allow_missing=False):
     probability, has_probability = get_variable(string, probability_string)
-    if not has_probability and not_allow_missing:
+    if not has_probability and not allow_missing:
         raise Exception('No probability is available: are you trying to load the labels from the held-out data?')
     probability = sanitize_scalar_value(probability)
     return probability
