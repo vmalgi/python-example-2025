@@ -58,7 +58,7 @@ def train_model(data_folder, model_folder, verbose):
     # Train the models.
     if verbose:
         print('Training the model on the data...')
-    
+
     # This very simple model trains a random forest model with very simple features.
 
     # Define the parameters for the random forest classifier and regressor.
@@ -114,7 +114,7 @@ def extract_features(record):
     header = load_header(record)
     age = get_age(header)
     sex = get_sex(header)
-    
+
     one_hot_encoding_sex = np.zeros(3, dtype=bool)
     if sex == 'Female':
         one_hot_encoding_sex[0] = 1
