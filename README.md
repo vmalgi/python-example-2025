@@ -8,7 +8,7 @@ For this example, we implemented a random forest model with several simple featu
 
 ## How do I run these scripts?
 
-First, you can download and create data for these scripts by following the instructions in the following section.
+First, you can download and create data for these scripts by following the [instructions](https://github.com/physionetchallenges/python-example-2025?tab=readme-ov-file#how-do-i-create-data-for-these-scripts) in the following section.
 
 Second, you can install the dependencies for these scripts by creating a Docker image (see below) or [virtual environment](https://docs.python.org/3/library/venv.html) and running
 
