@@ -67,7 +67,7 @@ These instructions use `code15_input` as the path for the input data files and `
             -i code15_input/exams_part0.hdf5 code15_input/exams_part1.hdf5 \
             -d code15_input/exams.csv \
             -l code15_input/code15_chagas_labels.csv \
-            -o code15_output
+            -o code15_output/exams_part0 code15_output/exams_part1
 
 Each `exam_part` file in the [CODE-15% dataset](https://zenodo.org/records/4916206) contains approximately 20,000 ECG recordings. You can include more or fewer of these files to increase or decrease the number of ECG recordings, respectively. You may want to start with fewer ECG recordings to debug your code.
 
