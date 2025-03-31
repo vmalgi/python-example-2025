@@ -1,0 +1,9 @@
+.qodo
+__pycache__
+README.md
+LICENSE
+.DS_Store
+.vscode
+.env
+.venv
+.pytest_cache
